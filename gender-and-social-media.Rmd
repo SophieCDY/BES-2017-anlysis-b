@@ -1,0 +1,20 @@
+---
+title: "Gender-And-Social-Media-Use"
+author: "Sophie CDY"
+date: "2025-02-27"
+output: html_document
+---
+
+```{r setup}
+library(dplyr)
+library(readr)
+library(ggplot2)
+
+bes_2017 <- read_csv('../data/BES-2017-f2f-gender-fb-tw.csv')
+```
+
+```{r visualisation}
+bes_2017 %>%
+  ggplot(aes(x = Gender, fill = Use_Facebook)) +
+  geom_bar(position = 'dodge')
+```
